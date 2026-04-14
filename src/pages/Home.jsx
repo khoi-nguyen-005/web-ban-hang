@@ -1,4 +1,9 @@
+import { useEffect } from "react";
 function Home() {
+  useEffect(() => {
+    document.title = "Trang chủ | PTIT Shop";
+  }, []);
+
   return (
     <>
       <header className="hero-banner">

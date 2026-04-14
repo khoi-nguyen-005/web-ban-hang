@@ -1,4 +1,10 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import NotFound from "./pages/NotFound";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import "./App.css";
@@ -12,10 +18,10 @@ function App() {
           <ul>
             {/* Sử dụng Link để chuyển trang không bị load lại trình duyệt */}
             <li>
-              <Link to="/">Trang chủ</Link>
+              <NavLink to="/">Trang chủ</NavLink>
             </li>
             <li>
-              <Link to="/about">Giới thiệu</Link>
+              <NavLink to="/about">Giới thiệu</NavLink>
             </li>
             <li>Linh kiện</li>
             <li>Liên hệ</li>
@@ -26,6 +32,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
 
         <footer id="footer">
